@@ -64,7 +64,6 @@ class MoviesController < ApplicationController
   def same_director
     movie = Movie.find(params[:id])
     director = movie.director
-    puts "director is nil" if director == nil or director == "" 
     unless director.blank?
       @movies = Movie.where(director: director)
     else
